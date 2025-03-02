@@ -1,6 +1,9 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import StudentService from "../service/StudentService.jsx";
+import Header from "../TODOApp/Header.jsx";
+import Todo from "../TODOApp/Todo.jsx";
+import styles from "./profilepage.module.css";
 
 export default function ProfilePage() {
     const [profileInfo, setProfileInfo] = useState({});
@@ -21,16 +24,23 @@ export default function ProfilePage() {
     }
 
     return (
-        <div className="profile-page-container">
-            <h2>Profile Information</h2>
-            <p>First Name: {profileInfo.firstName}</p>
-            <p>Last Name: {profileInfo.lastName}</p>
-            <p>Email: {profileInfo.email}</p>
-            <p>City: {profileInfo.city}</p>
-            <p>Role: {profileInfo.role}</p>
-            {profileInfo.role === "ADMIN" && (
-                <button><Link to={`/update-student/${profileInfo.id}`}>Update This Profile</Link></button>
-            )}
+        <div>
+            <div className={styles.profilePageContainer}>
+                <h2>Profile Information</h2>
+                <p>First Name: {profileInfo.firstName}</p>
+                <p>Last Name: {profileInfo.lastName}</p>
+                <p>Email: {profileInfo.email}</p>
+                <p>City: {profileInfo.city}</p>
+                <p>Role: {profileInfo.role}</p>
+                {profileInfo.role === "ADMIN" && (
+                    <button><Link to={`/update-student/${profileInfo.id}`}>Update This Profile</Link></button>
+                )}
+            </div>
+            <div className={styles.profileTodoContainer}>
+                <Header/>
+                <Todo/>
+            </div>
         </div>
+
     )
 }

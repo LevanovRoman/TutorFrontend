@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 import StudentService from "../service/StudentService.jsx";
+import styles from "./studentmanagement.module.css";
 
 export default function StudentManagementPage(){
 
@@ -35,9 +36,9 @@ export default function StudentManagementPage(){
     }
 
     return (
-        <div className="user-management-container">
+        <div className={styles.studentManagementContainer}>
             <h2>Students Management Page</h2>
-            <button className='reg-button'>
+            <button className={styles.regButton}>
                 <Link to="/register">Add User</Link>
             </button>
             <table>
@@ -60,7 +61,7 @@ export default function StudentManagementPage(){
                         <td>{student.city}</td>
                         <td>{student.role}</td>
                         <td>
-                            <button className='delete-button' onClick={() => deleteStudent(student.id)}>Delete</button>
+                            <button className={styles.deleteButton} onClick={() => deleteStudent(student.id)}>Delete</button>
                             <button>
                                 <Link to={`/update-student/${student.id}`}>Update</Link>
                             </button>

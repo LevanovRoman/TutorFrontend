@@ -1,6 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import StudentService from "../service/StudentService.jsx";
+import styles from "./registrationpage.module.css";
 
 export default function RegistrationPage() {
     const navigate = useNavigate();
@@ -45,40 +46,40 @@ export default function RegistrationPage() {
     }
 
     return (
-        <div className="auth-container">
+        <div className={styles.authContainer}>
             <h2>Registration</h2>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>First Name:</label>
                     <input type="text" name="firstName" value={formData.firstName}
                     onChange={handleInputChange} required={true} />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>Last Name:</label>
                     <input type="text" name="lastName" value={formData.lastName}
                            onChange={handleInputChange} required={true} />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>Email:</label>
                     <input type="email" name="email" value={formData.email}
                            onChange={handleInputChange} required />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>Password:</label>
                     <input type="password" name="password" value={formData.password}
                            onChange={handleInputChange} required />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>Password Confirm:</label>
                     <input type="password" name="passwordConfirm" value={formData.passwordConfirm}
                            onChange={handleInputChange} required />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>Role:</label>
                     <input type="text" name="role" value={formData.role} onChange={handleInputChange}
                            placeholder="Enter your role" required />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>City:</label>
                     <input type="text" name="city" value={formData.city}
                            onChange={handleInputChange} placeholder="Enter your city" required />

@@ -1,5 +1,6 @@
 import StudentService from "../service/StudentService.jsx";
 import {Link} from "react-router-dom";
+import styles from "./navbar.module.css";
 // import {useEffect, useState} from "react";
 
 export default function Navbar() {
@@ -22,7 +23,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav>
+        <nav className={styles.navbar}>
             <ul>
                 {!isAuthenticated && <li><Link to="/">Tutor Dev</Link></li>}
                 {isAuthenticated && <li><Link to="/profile">Profile</Link></li>}

@@ -1,0 +1,55 @@
+.profilePageContainer {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.profileTodoContainer {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.profilePageContainer h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.profilePageContainer p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.profilePageContainer button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.profilePageContainer button:hover {
+    background-color: #093c72;
+}
+
+.profilePageContainer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profilePageContainer a:hover {
+    background-color: #555;
+}
