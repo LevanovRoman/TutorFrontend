@@ -6,14 +6,14 @@
 }
 .itemName{
     font-weight: bold;
-    padding: 20px;
+    padding: 10px;
 }
 .line{
     border: 1px solid #f4f4f4;
 }
 .deleteButton{
     float: right;
-    padding: 12px 20px;
+    padding: 6px 15px;
     border: none;
     background-color: #f7ca18;
     color: white;

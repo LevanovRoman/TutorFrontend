@@ -7,7 +7,6 @@ class StudentService{
     static BASE_URL_ADMIN = "http://localhost:8080/api/admin";
 
     static async getAllStudents(accessToken) {
-        console.log(accessToken);
         try{
             const response = await axios.get(`${this.BASE_URL_ADMIN}/get-all`,
                 {

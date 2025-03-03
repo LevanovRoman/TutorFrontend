@@ -1,4 +1,4 @@
-.footer{
+.footerTodo{
     position: fixed;
     bottom: 0;
     font-size: 1.5em;
@@ -6,8 +6,8 @@
     text-align: center;
     width: 100%;
     background-color: #f7ca18;
-    padding: 10px;
+    padding: 20px;
 }
-.item{
-    margin: 50px;
+.itemTodo{
+    margin: 10px;
 }
