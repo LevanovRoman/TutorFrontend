@@ -6,7 +6,7 @@ export default class TaskService{
 
     static async addTaskToStudent(accessToken, studentId, task) {
         console.log("SERV", task)
-        const response = await axios.post(`${this.TASK_URL}/add-task/${studentId}`, {"title":task},
+        const response = await axios.post(`${this.TASK_URL}/add/${studentId}`, {"title":task},
             {
                 headers: {Authorization: `Bearer ${accessToken}`}
             })
@@ -16,7 +16,7 @@ export default class TaskService{
     }
 
     static async getTaskListForStudent(accessToken, studentId) {
-        const response = await axios.get(`${this.TASK_URL}/task-list/${studentId}`,
+        const response = await axios.get(`${this.TASK_URL}/list/${studentId}`,
             {
                 headers: {Authorization: `Bearer ${accessToken}`}
             })
@@ -25,4 +25,22 @@ export default class TaskService{
         return response.data;
     }
 
+    static async deleteTask(accessToken, taskId) {
+        const response = await axios.delete(`${this.TASK_URL}/delete/${taskId}`,
+            {
+                headers: {Authorization: `Bearer ${accessToken}`}
+            })
+        console.log("DELETE RESP ", response)
+        console.log("DELETE RESP ", response.data)
+        return response.status;
+    }
+
+    static async changeCompletedTask(accessToken, taskId) {
+        const response = await axios.get(`${this.TASK_URL}/change-status/${taskId}`,
+            {
+                headers: {Authorization: `Bearer ${accessToken}`}
+            })
+        console.log("CHANGE RESP ", response)
+        return response.status;
+    }
 }

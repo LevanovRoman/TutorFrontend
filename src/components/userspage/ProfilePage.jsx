@@ -12,6 +12,8 @@ export default function ProfilePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [taskList, setTaskList] = useState([]);
 
+    const completedTasks = taskList.filter((todo) => todo.isCompleted).length;
+    const totalTasks = taskList.length;
 
     useEffect(() => {
         fetchProfileInfo();
@@ -59,9 +61,8 @@ export default function ProfilePage() {
             <div className={styles.profileTodoContainer}>
                 <Header/>
                 {isLoading ? <p>Loading...</p> :
-                    <Todo taskList={taskList} setTaskList={setTaskList} fetchTasks={fetchTasks}/>}
-                {/*<Header/>*/}
-                <FooterTodo />
+                    <Todo taskList={taskList} fetchTasks={fetchTasks}/>}
+                <FooterTodo completedTasks={completedTasks} totalTasks={totalTasks}/>
             </div>
         </div>
 

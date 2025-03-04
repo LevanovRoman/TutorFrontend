@@ -1,8 +1,8 @@
 import styles from "./header.module.css";
 
-export default function FooterTodo({completedTodos, totalTodos}){
+export default function FooterTodo({completedTasks, totalTasks}){
     return <div className={styles.header}>
-        <span className={styles.itemTodo}>Completed Tasks : 5{completedTodos}</span>
-        <span className={styles.itemTodo}>Total Tasks : 15{totalTodos}</span>
+        <span className={styles.itemTodo}>Completed Tasks : {completedTasks}</span>
+        <span className={styles.itemTodo}>Total Tasks : {totalTasks}</span>
     </div>
 }
