@@ -5,12 +5,13 @@ import Header from "../TODOApp/Header.jsx";
 import Todo from "../TODOApp/Todo.jsx";
 import styles from "./profilepage.module.css";
 import TaskService from "../service/TaskService.jsx";
+import FooterTodo from "../TODOApp/FooterTodo.jsx";
 
 export default function ProfilePage() {
     const [profileInfo, setProfileInfo] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [taskList, setTaskList] = useState([]);
-    const accessToken = localStorage.getItem('accessToken');
+
 
     useEffect(() => {
         fetchProfileInfo();
@@ -18,6 +19,7 @@ export default function ProfilePage() {
 
     const fetchProfileInfo = async () => {
         try{
+            const accessToken = localStorage.getItem('accessToken');
             const response = await StudentService.getYourProfile(accessToken);
             localStorage.setItem("studentId", response.id);
             setProfileInfo(response);
@@ -29,9 +31,10 @@ export default function ProfilePage() {
         }
     }
 
-    const fetchTasks = async (studentId) => {
+    const fetchTasks = async () => {
         try{
-            // const studentId = localStorage.getItem("studentId");
+            const studentId = localStorage.getItem("studentId");
+            const accessToken = localStorage.getItem('accessToken');
             console.log("FORM_LOC", studentId);
             const response = await TaskService.getTaskListForStudent(accessToken, studentId);
             setTaskList(response);
@@ -56,8 +59,9 @@ export default function ProfilePage() {
             <div className={styles.profileTodoContainer}>
                 <Header/>
                 {isLoading ? <p>Loading...</p> :
-                    <Todo taskList={taskList} setTaskList={setTaskList}/>}
-
+                    <Todo taskList={taskList} setTaskList={setTaskList} fetchTasks={fetchTasks}/>}
+                {/*<Header/>*/}
+                <FooterTodo />
             </div>
         </div>
 

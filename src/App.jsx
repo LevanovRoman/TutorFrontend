@@ -35,10 +35,15 @@ function App() {
 
                     </Routes>
                 </div>
-                <Footer/>
+                {/*<Footer/>*/}
             </div>
         </BrowserRouter>
     );
 }
 
 export default App;
+
+//TODO проверка пустой задачи
+//TODO удаление задачи
+//TODO подсчет выполненных и всего задач
+//TODO зачеркнуть и изменить статус задачи при выполнении

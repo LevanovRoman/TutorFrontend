@@ -3,7 +3,7 @@ import styles from "./form.module.css";
 import TaskService from "../service/TaskService.jsx";
 import {useState} from "react";
 
-export default function Form(){
+export default function Form({fetchTasks}){
     const [task, setTask] = useState("");
     const studentId = localStorage.getItem("studentId");
     const accessToken = localStorage.getItem("accessToken");
@@ -19,7 +19,7 @@ export default function Form(){
             console.log("task", taskNew);
             // const accessToken = localStorage.getItem("accessToken");
             await TaskService.addTaskToStudent(accessToken, studentId, taskNew);
-            // await fetchTasks();
+            await fetchTasks();
         }catch (error) {
             console.error('Error add task to student:', error);
         }

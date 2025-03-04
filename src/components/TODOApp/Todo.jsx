@@ -3,7 +3,7 @@ import Form from "./Form.jsx";
 import TodoList from "./TodoList.jsx";
 import FooterTodo from "./FooterTodo.jsx";
 
-export default function Todo({taskList, setTaskList}){
+export default function Todo({taskList, setTaskList, fetchTasks}){
     const [todos, setTodos] = useState([]);
     const completedTodos = todos.filter((todo) => todo.done).length;
     const totalTodos = todos.length;
@@ -13,10 +13,10 @@ export default function Todo({taskList, setTaskList}){
     return (
         <div>
             {/*<Form todos={todos} setTodos={setTodos}/>*/}
-            <Form />
+            <Form fetchTasks={fetchTasks}/>
             {/*<TodoList todos={todos} setTodos={setTodos}/>*/}
             <TodoList taskList={taskList} setTaskList={setTaskList}/>
-            <FooterTodo completedTodos={completedTodos} totalTodos={totalTodos}/>
+            {/*<FooterTodo completedTodos={completedTodos} totalTodos={totalTodos}/>*/}
         </div>
     );
 }
