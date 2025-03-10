@@ -8,6 +8,7 @@ import RegistrationPage from "./components/auth/RegistrationPage.jsx";
 import StudentManagementPage from "./components/userspage/StudentManagementPage.jsx";
 import UpdateStudent from "./components/userspage/UpdateStudent.jsx";
 import QuizStart from "./components/Quiz/QuizStart.jsx";
+import QuizFirst from "./components/Quiz/QuizFirst.jsx";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                   <Route exact path='/login' element={<LoginPage />} />
                   <Route path="/profile" element={<ProfilePage />}/>
                   <Route path="/quiz" element={<QuizStart />}/>
+                  <Route path="/quiz-first" element={<QuizFirst />}/>
                   {/*<Route path="*" element={<NotFound/>}/>*/}
 
                   {StudentService.adminOnly() && (

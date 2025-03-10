@@ -1,82 +1,68 @@
-// import '../../../Temporary/quizcss.scss';
 import {useState} from "react";
+import Game from "./Game.jsx";
+import Result from "./Result.jsx";
 
-const questions = [
-    {
-        title: 'React - это ... ?',
-        variants: ['библиотека', 'фреймворк', 'приложение'],
-        correct: 0,
-    },
-    {
-        title: 'Компонент - это ... ',
-        variants: ['приложение', 'часть приложения или страницы', 'то, что я не знаю что такое'],
-        correct: 1,
-    },
-    {
-        title: 'Что такое JSX?',
-        variants: [
-            'Это простой HTML',
-            'Это функция',
-            'Это тот же HTML, но с возможностью выполнять JS-код',
-        ],
-        correct: 2,
-    },
-];
+// const questions = [
+//     {
+//         title: 'React - это ... ?',
+//         variants: ['библиотека', 'фреймворк', 'приложение'],
+//         correct: 0,
+//     },
+//     {
+//         title: 'Компонент - это ... ',
+//         variants: ['приложение', 'часть приложения или страницы', 'то, что я не знаю что такое'],
+//         correct: 1,
+//     },
+//     {
+//         title: 'Что такое JSX?',
+//         variants: [
+//             'Это простой HTML',
+//             'Это функция',
+//             'Это тот же HTML, но с возможностью выполнять JS-код',
+//         ],
+//         correct: 2,
+//     },
+// ];
 
-function Result({ correct }) {
-    return (
-        <div className="result">
-            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
-            <h2>Вы отгадали {correct} ответа из {questions.length}</h2>
-            <a href="/">
-                <button>Попробовать снова</button>
-            </a>
-
-        </div>
-    );
-}
-
-function Game({step, question, onClickVariant}) {
-    const percentage = Math.round(step / questions.length * 100);
-
-    return (
-        <>
-            <div className="progress">
-                <div style={{ width: `${percentage}%` }} className="progress__inner"></div>
-            </div>
-            <h1>{question.title}</h1>
-            <ul>
-                {question.variants.map((text, index) => (
-                    <li onClick={() => onClickVariant(index)} key={text}>{text}</li>
-                ))}
-            </ul>
-        </>
-    );
-}
-
-function QuizStart() {
+export default function QuizStart({questions}) {
     const [step, setStep] = useState(0);
     const [correct, setCorrect] = useState(0);
+    const [answerList, setAnswerList] = useState([
+    //     {
+    //     "answerStudent": '',
+    //     "rightOrNot": false
+    // }
+    ]);
     const question = questions[step];
+    const questionsLength = questions.length;
 
-    const onClickVariant = (index) => {
-        console.log(step, index);
+    const onClickVariant = (text) => {
+        console.log(step, text);
+        console.log("ANSWER:  ", questions[step].answer);
         setStep(step + 1);
 
-        if (index === question.correct){
+        if (text === questions[step].answer){
             setCorrect(correct + 1);
+            setAnswerList([... answerList, text]);
+            console.log("answerList1  ",answerList);
+        }else {
+            setAnswerList([... answerList, text]);
+            console.log("answerList2  ",answerList);
         }
     }
 
     return (
         <div className="App">
             {
-                step !== questions.length ? <Game step={step} question={question} onClickVariant={onClickVariant}/> :
-                    <Result correct={correct}/>
+                step !== questionsLength ? <Game
+                                                step={step}
+                                                question={question}
+                                                onClickVariant={onClickVariant}
+                                                questionsLength={questionsLength}
+                                            /> : <Result correct={correct} questionsLength={questionsLength}/>
+
             }
 
         </div>
     );
 }
-
-export default QuizStart;

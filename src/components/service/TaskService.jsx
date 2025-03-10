@@ -5,7 +5,6 @@ export default class TaskService{
     static TASK_URL = "http://localhost:8080/api/admin-user/task";
 
     static async addTaskToStudent(accessToken, studentId, task) {
-        console.log("SERV", task)
         const response = await axios.post(`${this.TASK_URL}/add/${studentId}`, {"title":task},
             {
                 headers: {Authorization: `Bearer ${accessToken}`}

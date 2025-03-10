@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import StudentService from "../service/StudentService.jsx";
 import styles from "./loginpage.module.css";
 
-function LoginPage({ setIsAdmin, setIsAuthenticated }) {
+function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');

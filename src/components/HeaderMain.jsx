@@ -18,13 +18,13 @@ export default function HeaderMain() {
     }
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.containerHeader}>
             <div className={styles.headerMain}>
                 <div className="logo">Логотип</div>
                 <nav>
                     <ul className={styles.listMenu}>
                         {!isAuthenticated && <li><Link to="/">Tutor Dev</Link></li>}
-                        {isAuthenticated && <li><Link to="/quiz">Quiz</Link></li>}
+                        {isAuthenticated && <li><Link to="/quiz-start">Quiz</Link></li>}
                         {isAuthenticated && <li><Link to="/profile">Profile</Link></li>}
                         {isAdmin && <li><Link to="/admin/student-management">Student Management</Link></li>}
                         {isAuthenticated && <li><Link to="/" onClick={handleLogout}>Logout</Link></li>}
