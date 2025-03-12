@@ -24,7 +24,7 @@ function App() {
                   <Route path="/quiz-first" element={<QuizFirst />}/>
                   {/*<Route path="*" element={<NotFound/>}/>*/}
 
-                  {StudentService.adminOnly() && (
+          {StudentService.adminOnly() && (
                       <>
                           <Route path="/register" element={<RegistrationPage />} />
                           <Route path="/admin/student-management" element={<StudentManagementPage />} />

@@ -24,7 +24,8 @@ export default function HeaderMain() {
 
                 <div className={styles.headerWrapper}>
                         {!isAuthenticated && <Link className={styles.headerLink} to="/">Tutor Dev</Link>}
-                        {isAuthenticated && <Link className={styles.headerLink} to="/quiz-first">Quiz</Link>}
+                        {isAuthenticated &&
+                            <Link className={styles.headerLink} to="/quiz-first">Quiz</Link>}
                         {isAuthenticated && <Link className={styles.headerLink} to="/profile">Profile</Link>}
                         {isAdmin && <Link className={styles.headerLink} to="/admin/student-management">Student Management</Link>}
                         {isAuthenticated && <Link className={styles.headerLink} to="/" onClick={handleLogout}>Logout</Link>}
