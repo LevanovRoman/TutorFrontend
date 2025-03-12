@@ -19,17 +19,17 @@ export default function HeaderMain() {
 
     return (
         <div className={styles.containerHeader}>
-            <div className={styles.headerMain}>
-                <div className="logo">Логотип</div>
-                <nav>
-                    <ul className={styles.listMenu}>
-                        {!isAuthenticated && <li><Link to="/">Tutor Dev</Link></li>}
-                        {isAuthenticated && <li><Link to="/quiz-start">Quiz</Link></li>}
-                        {isAuthenticated && <li><Link to="/profile">Profile</Link></li>}
-                        {isAdmin && <li><Link to="/admin/student-management">Student Management</Link></li>}
-                        {isAuthenticated && <li><Link to="/" onClick={handleLogout}>Logout</Link></li>}
-                    </ul>
-                </nav>
+            <div className={styles.headerInner}>
+                    <img className={styles.headerLogo} src="/img/Logo.svg" alt=""/>
+
+                <div className={styles.headerWrapper}>
+                        {!isAuthenticated && <Link className={styles.headerLink} to="/">Tutor Dev</Link>}
+                        {isAuthenticated && <Link className={styles.headerLink} to="/quiz-first">Quiz</Link>}
+                        {isAuthenticated && <Link className={styles.headerLink} to="/profile">Profile</Link>}
+                        {isAdmin && <Link className={styles.headerLink} to="/admin/student-management">Student Management</Link>}
+                        {isAuthenticated && <Link className={styles.headerLink} to="/" onClick={handleLogout}>Logout</Link>}
+
+                </div>
             </div>
         </div>
     )

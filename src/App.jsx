@@ -20,7 +20,7 @@ function App() {
                   <Route exact path='/' element={<LoginPage />} />
                   <Route exact path='/login' element={<LoginPage />} />
                   <Route path="/profile" element={<ProfilePage />}/>
-                  <Route path="/quiz" element={<QuizStart />}/>
+                  <Route path="/quiz-start" element={<QuizStart />}/>
                   <Route path="/quiz-first" element={<QuizFirst />}/>
                   {/*<Route path="*" element={<NotFound/>}/>*/}
 

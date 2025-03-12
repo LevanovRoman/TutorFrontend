@@ -40,13 +40,12 @@ export default function QuizStart({questions}) {
         console.log(step, text);
         console.log("ANSWER:  ", questions[step].answer);
         setStep(step + 1);
+        setAnswerList([... answerList, text]);
 
         if (text === questions[step].answer){
             setCorrect(correct + 1);
-            setAnswerList([... answerList, text]);
             console.log("answerList1  ",answerList);
         }else {
-            setAnswerList([... answerList, text]);
             console.log("answerList2  ",answerList);
         }
     }
@@ -59,10 +58,11 @@ export default function QuizStart({questions}) {
                                                 question={question}
                                                 onClickVariant={onClickVariant}
                                                 questionsLength={questionsLength}
-                                            /> : <Result correct={correct} questionsLength={questionsLength}/>
-
+                                            /> : <Result correct={correct}
+                                                         questionsLength={questionsLength}
+                                                         answerList={answerList}
+                                                    />
             }
-
         </div>
     );
 }
