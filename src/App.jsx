@@ -9,6 +9,7 @@ import StudentManagementPage from "./components/userspage/StudentManagementPage.
 import UpdateStudent from "./components/userspage/UpdateStudent.jsx";
 import QuizStart from "./components/Quiz/QuizStart.jsx";
 import QuizFirst from "./components/Quiz/QuizFirst.jsx";
+import TodoPage from "./components/userspage/TodoPage.jsx";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                   <Route exact path='/' element={<LoginPage />} />
                   <Route exact path='/login' element={<LoginPage />} />
                   <Route path="/profile" element={<ProfilePage />}/>
+                  <Route path="/todo" element={<TodoPage />}/>
                   <Route path="/quiz-start" element={<QuizStart />}/>
                   <Route path="/quiz-first" element={<QuizFirst />}/>
                   {/*<Route path="*" element={<NotFound/>}/>*/}
@@ -33,7 +35,7 @@ function App() {
                   )}
                   <Route path="*" element={<Navigate to="/login" />} />
               </Routes>
-          <FooterMain/>
+          {/*<FooterMain/>*/}
           {/*</div>*/}
       </div>
 

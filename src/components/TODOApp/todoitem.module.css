@@ -11,11 +11,11 @@
 .line{
     border: 1px solid #f4f4f4;
 }
-.deleteButton{
+.deleteButtonTodoList{
     float: right;
     padding: 6px 15px;
     border: none;
-    background-color: #f7ca18;
+    background-color: rgb(88, 183, 181);
     color: white;
     margin-top: -5px;
     border-radius: 4px;

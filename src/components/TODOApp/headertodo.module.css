@@ -1,0 +1,12 @@
+.headerTodo{
+    background-color: rgb(88, 183, 181);
+    text-align: center;
+    font-weight: bold;
+    /*height: 50px;*/
+    padding: 20px;
+    font-size: 1.6em;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    color: white;
+    border-radius: 12px;
+}

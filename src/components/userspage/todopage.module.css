@@ -1,0 +1,18 @@
+.containerTodo {
+    /*margin: 0;*/
+    padding: 120px;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    min-height: 900px;
+    background-color: rgba(242, 172, 174, 0.6392156863);
+}
+.loginTodoInner {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+

@@ -31,7 +31,7 @@ export default function TodoItem({item, fetchTasks}){
             <span className={classCompleted} onClick={() => handleClick(item.id)}>{item.title}</span>
             {StudentService.adminOnly() &&
                 <span>
-                <button onClick={() => handleDelete(item.id)} className={styles.deleteButton}>x</button>
+                <button onClick={() => handleDelete(item.id)} className={styles.deleteButtonTodoList}>x</button>
             </span>}
         </div>
         <hr className={styles.line}/>

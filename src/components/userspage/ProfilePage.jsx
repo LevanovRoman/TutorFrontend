@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import StudentService from "../service/StudentService.jsx";
-import Header from "../TODOApp/Header.jsx";
+import HeaderTodo from "../TODOApp/HeaderTodo.jsx";
 import Todo from "../TODOApp/Todo.jsx";
 import styles from "./profilepage.module.css";
 import TaskService from "../service/TaskService.jsx";
 import FooterTodo from "../TODOApp/FooterTodo.jsx";
+import TodoPage from "./TodoPage.jsx";
 
 export default function ProfilePage() {
     const [profileInfo, setProfileInfo] = useState({});
@@ -59,10 +60,11 @@ export default function ProfilePage() {
                 )}
             </div>
             <div className={styles.profileTodoContainer}>
-                <Header/>
-                {isLoading ? <p>Loading...</p> :
-                    <Todo taskList={taskList} fetchTasks={fetchTasks}/>}
-                <FooterTodo completedTasks={completedTasks} totalTasks={totalTasks}/>
+                {/*<HeaderTodo/>*/}
+                {/*{isLoading ? <p>Loading...</p> :*/}
+                {/*    <Todo taskList={taskList} fetchTasks={fetchTasks}/>}*/}
+                {/*<FooterTodo completedTasks={completedTasks} totalTasks={totalTasks}/>*/}
+            <TodoPage/>
             </div>
         </div>
 

@@ -21,16 +21,16 @@ export default function HeaderMain() {
         <div className={styles.containerHeader}>
             <div className={styles.headerInner}>
                     <img className={styles.headerLogo} src="/img/Logo.svg" alt=""/>
-
+                {StudentService.isAuthenticated() &&
                 <div className={styles.headerWrapper}>
-                        {!isAuthenticated && <Link className={styles.headerLink} to="/">Tutor Dev</Link>}
-                        {isAuthenticated &&
-                            <Link className={styles.headerLink} to="/quiz-first">Quiz</Link>}
-                        {isAuthenticated && <Link className={styles.headerLink} to="/profile">Profile</Link>}
-                        {isAdmin && <Link className={styles.headerLink} to="/admin/student-management">Student Management</Link>}
-                        {isAuthenticated && <Link className={styles.headerLink} to="/" onClick={handleLogout}>Logout</Link>}
-
+                        {/*{!StudentService.isAuthenticated() && <Link className={styles.headerLink} to="/">Tutor Dev</Link>}*/}
+                    <Link className={styles.headerLink} to="/quiz-first">Тестирование</Link>
+                    <Link className={styles.headerLink} to="/profile">Мой профиль</Link>
+                    <Link className={styles.headerLink} to="/todo">Мои задания</Link>
+                    {StudentService.isAdmin() && <Link className={styles.headerLink} to="/admin/student-management">Student Management</Link>}
+                    <Link className={styles.headerLink} to="/" onClick={handleLogout}>Logout</Link>
                 </div>
+                }
             </div>
         </div>
     )

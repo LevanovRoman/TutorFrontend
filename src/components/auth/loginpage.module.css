@@ -3,7 +3,7 @@
     padding: 120px;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-    min-height: 600px;
+    min-height: 900px;
     background-color: rgba(242, 172, 174, 0.6392156863);
 }
 .loginInner {
@@ -19,6 +19,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-family: "BadScript", sans-serif;
+    color: rgb(88, 183, 181);
 }
 .formLogin {
     margin-bottom: 15px;
@@ -27,6 +28,7 @@
     display: block;
     font-weight: bold;
     padding: 10px;
+    color: rgb(88, 183, 181);
 }
 .inputLogin {
     width: 94%;
@@ -39,7 +41,7 @@
     height: 50px;
     padding: 10px;
     margin-top: 25px;
-    background: #333;
+    background: rgb(88, 183, 181);
     font-size: 20px;
     color: white;
     border: none;
